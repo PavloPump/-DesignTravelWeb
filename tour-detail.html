@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Романтическая Италия - TravelHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tour-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>TravelHub</h2>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Главная</span>
+                </a>
+                <a href="search.html" class="nav-link">
+                    <span class="nav-icon">🔍</span>
+                    <span class="nav-text">Поиск</span>
+                </a>
+                <a href="favorites.html" class="nav-link">
+                    <span class="nav-icon">❤️</span>
+                    <span class="nav-text">Избранное</span>
+                </a>
+                <a href="profile.html" class="nav-link">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Профиль</span>
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Кнопка назад -->
+    <div class="back-button">
+        <a href="index.html#tours" class="back-link">
+            <span>←</span> Вернуться к турам
+        </a>
+    </div>
+
+    <!-- Галерея изображений -->
+    <section class="tour-gallery">
+        <div class="main-image">
+            <img src="media/italia.jpg" alt="Рим" id="mainImage">
+            <div class="image-overlay">
+                <button class="favorite-btn" id="favoriteBtn">
+                    <span class="heart-icon">♡</span>
+                </button>
+            </div>
+        </div>
+        <div class="thumbnail-grid">
+            <img src="media/italia.jpg" alt="Рим" class="thumbnail active" onclick="changeImage(this, 'media/italia.jpg')">
+            <img src="media/italia2.jpg" alt="Колизей" class="thumbnail" onclick="changeImage(this, 'media/italia2.jpg')">
+            <img src="media/italia3.jpg" alt="Флоренция" class="thumbnail" onclick="changeImage(this, 'media/italia3.jpg')">
+            <img src="media/italia4.jpg" alt="Венеция" class="thumbnail" onclick="changeImage(this, 'media/italia4.jpg')">
+            <img src="media/italia5.jpg" alt="Ватикан" class="thumbnail" onclick="changeImage(this, 'media/italia5.jpg')">
+            <img src="media/italia6.jpg" alt="Тоскана" class="thumbnail" onclick="changeImage(this, 'media/italia6.jpg')">
+        </div>
+    </section>
+
+    <!-- Основная информация о туре -->
+    <section class="tour-info">
+        <div class="container">
+            <div class="tour-header">
+                <div class="tour-title">
+                    <h1>Романтическая Италия</h1>
+                    <div class="tour-meta">
+                        <span class="location">📍 Рим, Флоренция, Венеция</span>
+                        <span class="duration">⏱️ 7 дней / 6 ночей</span>
+                        <span class="rating">⭐ 4.8 (234 отзыва)</span>
+                    </div>
+                </div>
+                <div class="tour-price-card">
+                    <div class="price">
+                        <span class="price-label">от</span>
+                        <span class="price-value">89 900 ₽</span>
+                        <span class="price-period">за человека</span>
+                    </div>
+                    <button class="book-btn">Забронировать</button>
+                </div>
+            </div>
+
+            <!-- Краткое описание -->
+            <div class="tour-summary">
+                <h2>О туре</h2>
+                <p>Погрузитесь в атмосферу итальянской романтики и культуры. Посетите древний Рим, ренессансную Флоренцию и сказочную Венецию. Этот тур идеально подходит для пар и всех, кто хочет открыть для себя сердце Италии.</p>
+            </div>
+
+            <!-- Программа тура -->
+            <div class="tour-program">
+                <h2>Программа тура</h2>
+                <div class="day-cards">
+                    <div class="day-card">
+                        <div class="day-number">День 1</div>
+                        <div class="day-content">
+                            <h3>Прибытие в Рим</h3>
+                            <p>Встреча в аэропорту, трансфер в отель. Свободное время для акклиматизации. Вечерняя прогулка по центру Рима.</p>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <div class="day-number">День 2</div>
+                        <div class="day-content">
+                            <h3>Древний Рим</h3>
+                            <p>Экскурсия по Колизею, Римскому форуму и Палатинскому холму. Посещение Капитолийских музеев.</p>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <div class="day-number">День 3</div>
+                        <div class="day-content">
+                            <h3>Ватикан</h3>
+                            <p>Посещение собора Святого Петра, Ватиканских музеев и Сикстинской капеллы.</p>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <div class="day-number">День 4</div>
+                        <div class="day-content">
+                            <h3>Переезд во Флоренцию</h3>
+                            <p>Утренний переезд во Флоренцию. Экскурсия по историческому центру, посещение собора Санта-Мария-дель-Фьоре.</p>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <div class="day-number">День 5</div>
+                        <div class="day-content">
+                            <h3>Искусство Флоренции</h3>
+                            <p>Посещение галереи Уффици, моста Понте Веккьо, палаццо Питти и садов Боболи.</p>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <div class="day-number">День 6</div>
+                        <div class="day-content">
+                            <h3>Венеция</h3>
+                            <p>Переезд в Венецию. Прогулка на гондоле по каналам, посещение площади Сан-Марко и Дворца дожей.</p>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <div class="day-number">День 7</div>
+                        <div class="day-content">
+                            <h3>Вылет</h3>
+                            <p>Свободное время для покупок сувениров. Трансфер в аэропорт.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Включено в стоимость -->
+            <div class="tour-includes">
+                <h2>Что включено</h2>
+                <div class="includes-grid">
+                    <div class="include-item">
+                        <span class="include-icon">✈️</span>
+                        <span>Авиабилеты</span>
+                    </div>
+                    <div class="include-item">
+                        <span class="include-icon">🏨</span>
+                        <span>Проживание в отелях 4*</span>
+                    </div>
+                    <div class="include-item">
+                        <span class="include-icon">🚌</span>
+                        <span>Трансфер и транспорт</span>
+                    </div>
+                    <div class="include-item">
+                        <span class="include-icon">👥</span>
+                        <span>Услуги гида</span>
+                    </div>
+                    <div class="include-item">
+                        <span class="include-icon">🎫</span>
+                        <span>Входные билеты</span>
+                    </div>
+                    <div class="include-item">
+                        <span class="include-icon">🍽️</span>
+                        <span>Завтраки</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Отзывы -->
+            <div class="tour-reviews">
+                <h2>Отзывы путешественников</h2>
+                <div class="reviews-list">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">АК</div>
+                                <div class="reviewer-details">
+                                    <h4>Анна Козлова</h4>
+                                    <div class="review-date">Октябрь 2024</div>
+                                </div>
+                            </div>
+                            <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <p>Невероятное путешествие! Организация на высшем уровне, гиды очень компетентные. Особенно понравилась Венеция - просто волшебно!</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">МП</div>
+                                <div class="reviewer-details">
+                                    <h4>Михаил Петров</h4>
+                                    <div class="review-date">Сентябрь 2024</div>
+                                </div>
+                            </div>
+                            <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <p>Отличный тур для медового месяца. Все продумано до мелочей. Рим впечатлил своей историей, а Флоренция - искусством.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фиксированная кнопка бронирования (мобильная) -->
+    <div class="mobile-book-bar">
+        <div class="mobile-price">от 89 900 ₽</div>
+        <button class="mobile-book-btn">Забронировать</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="tour-detail.js"></script>
+</body>
+</html>

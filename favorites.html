@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранное - TravelHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="favorites.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>TravelHub</h2>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Главная</span>
+                </a>
+                <a href="search.html" class="nav-link">
+                    <span class="nav-icon">🔍</span>
+                    <span class="nav-text">Поиск</span>
+                </a>
+                <a href="favorites.html" class="nav-link active">
+                    <span class="nav-icon">❤️</span>
+                    <span class="nav-text">Избранное</span>
+                </a>
+                <a href="profile.html" class="nav-link">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Профиль</span>
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero секция как на главной странице -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Избранные путешествия</h1>
+            <p>Ваши сохраненные туры и мечты о путешествиях</p>
+            
+            <!-- Форма поиска -->
+            <div class="search-container">
+                <form class="search-form">
+                    <div class="search-group">
+                        <label for="destination">Куда</label>
+                        <input type="text" id="destination" placeholder="Город, страна или регион">
+                    </div>
+                    <div class="search-group">
+                        <label for="checkin">Заезд</label>
+                        <input type="date" id="checkin">
+                    </div>
+                    <div class="search-group">
+                        <label for="checkout">Выезд</label>
+                        <input type="date" id="checkout">
+                    </div>
+                    <div class="search-group">
+                        <label for="guests">Гости</label>
+                        <select id="guests">
+                            <option value="1">1 гость</option>
+                            <option value="2">2 гостя</option>
+                            <option value="3">3 гостя</option>
+                            <option value="4">4 гостя</option>
+                            <option value="5+">5+ гостей</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="search-btn">Найти туры</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фильтры и сортировка -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <label for="sortSelect">Сортировка:</label>
+                    <select id="sortSelect">
+                        <option value="date">По дате добавления</option>
+                        <option value="price-asc">Цена: по возрастанию</option>
+                        <option value="price-desc">Цена: по убыванию</option>
+                        <option value="name">По названию</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="priceFilter">Цена до:</label>
+                    <select id="priceFilter">
+                        <option value="">Любая</option>
+                        <option value="50000">50 000 ₽</option>
+                        <option value="100000">100 000 ₽</option>
+                        <option value="150000">150 000 ₽</option>
+                        <option value="200000">200 000 ₽</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="durationFilter">Длительность:</label>
+                    <select id="durationFilter">
+                        <option value="">Любая</option>
+                        <option value="3-5">3-5 дней</option>
+                        <option value="7-10">7-10 дней</option>
+                        <option value="11-14">11-14 дней</option>
+                        <option value="15+">15+ дней</option>
+                    </select>
+                </div>
+                <button class="clear-filters-btn">Очистить фильтры</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Список избранных туров -->
+    <section class="favorites-content">
+        <div class="container">
+            <div class="favorites-header">
+                <h2 id="favoritesCount">0 туров в избранном</h2>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid">⊞</button>
+                    <button class="view-btn" data-view="list">☰</button>
+                </div>
+            </div>
+
+            <!-- Сетка туров -->
+            <div class="favorites-grid" id="favoritesGrid">
+                <!-- Содержимое будет загружено из localStorage -->
+            </div>
+
+            <!-- Список туров -->
+            <div class="favorites-list" id="favoritesList" style="display: none;">
+                <!-- Содержимое будет загружено из localStorage -->
+            </div>
+
+            <!-- Пустое состояние -->
+            <div class="empty-favorites" id="emptyFavorites">
+                <div class="empty-icon">💔</div>
+                <h3>У вас пока нет избранных туров</h3>
+                <p>Добавляйте понравившиеся туры в избранное, чтобы не потерять их</p>
+                <a href="index.html#tours" class="browse-tours-btn">Смотреть туры</a>
+            </div>
+
+            <!-- Сравнение туров -->
+            <div class="compare-section" id="compareSection" style="display: none;">
+                <h3>Сравнение туров</h3>
+                <div class="compare-bar">
+                    <span id="compareCount">Выбрано туров: 0</span>
+                    <button class="compare-btn" id="compareBtn" disabled>Сравнить</button>
+                    <button class="clear-compare-btn" id="clearCompareBtn">Очистить</button>
+                </div>
+                <div class="compare-grid" id="compareGrid">
+                    <!-- Содержимое для сравнения -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно сравнения -->
+    <div class="compare-modal" id="compareModal" style="display: none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Сравнение туров</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="compare-table" id="compareTable">
+                    <!-- Таблица сравнения -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="favorites.js"></script>
+</body>
+</html>

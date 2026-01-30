@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест изображений</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .test-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .test-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>Тест загрузки изображений</h1>
+    
+    <div class="test-grid">
+        <div class="test-item">
+            <h3>Italia</h3>
+            <img src="media/italia.jpg" alt="Italia" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='Ошибка загрузки'" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='Загружено'">
+            <div class="status">Проверка...</div>
+        </div>
+        
+        <div class="test-item">
+            <h3>Tailand</h3>
+            <img src="media/tailand.jpg" alt="Tailand" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='Ошибка загрузки'" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='Загружено'">
+            <div class="status">Проверка...</div>
+        </div>
+        
+        <div class="test-item">
+            <h3>Turcia</h3>
+            <img src="media/turcia.jpg" alt="Turcia" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='Ошибка загрузки'" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='Загружено'">
+            <div class="status">Проверка...</div>
+        </div>
+        
+        <div class="test-item">
+            <h3>Paris</h3>
+            <img src="media/paris.jpg" alt="Paris" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='Ошибка загрузки'" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='Загружено'">
+            <div class="status">Проверка...</div>
+        </div>
+        
+        <div class="test-item">
+            <h3>Tokio</h3>
+            <img src="media/tokio.jpg" alt="Tokio" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='Ошибка загрузки'" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='Загружено'">
+            <div class="status">Проверка...</div>
+        </div>
+        
+        <div class="test-item">
+            <h3>Bali</h3>
+            <img src="media/bali.jpg" alt="Bali" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='Ошибка загрузки'" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='Загружено'">
+            <div class="status">Проверка...</div>
+        </div>
+        
+        <div class="test-item">
+            <h3>New York</h3>
+            <img src="media/New-Yourk.jpg" alt="New York" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='Ошибка загрузки'" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='Загружено'">
+            <div class="status">Проверка...</div>
+        </div>
+        
+        <div class="test-item">
+            <h3>Background</h3>
+            <img src="media/background.jpg" alt="Background" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='Ошибка загрузки'" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='Загружено'">
+            <div class="status">Проверка...</div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px;">
+        <h3>Информация о файлах:</h3>
+        <p>Текущая директория: <strong id="currentDir"></strong></p>
+        <p>Полный путь к изображению: <strong id="fullPath"></strong></p>
+    </div>
+    
+    <script>
+        document.getElementById('currentDir').textContent = window.location.href;
+        document.getElementById('fullPath').textContent = window.location.origin + window.location.pathname.replace('test-images.html', '') + 'media/italia.jpg';
+    </script>
+</body>
+</html>

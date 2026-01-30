@@ -1,0 +1,889 @@
+/* Стили для страницы избранных туров */
+
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Навигация */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo h2 {
+    color: #FF385C;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-icon {
+    font-size: 18px;
+    display: none;
+}
+
+.nav-text {
+    display: block;
+}
+
+.nav-link:hover {
+    color: #FF385C;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #222;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Форма поиска */
+.search-container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: end;
+}
+
+.search-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #222;
+    font-size: 14px;
+}
+
+.search-group input,
+.search-group select {
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+.search-group input:focus,
+.search-group select:focus {
+    outline: none;
+    border-color: #FF385C;
+}
+
+.search-btn {
+    background: #FF385C;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: fit-content;
+}
+
+.search-btn:hover {
+    background: #E31C5F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 56, 92, 0.3);
+}
+
+/* Фильтры */
+.filters-section {
+    background: white;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+}
+
+.filters-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-weight: 500;
+    color: #222;
+    white-space: nowrap;
+}
+
+.filter-group select {
+    padding: 8px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: #FF385C;
+}
+
+.clear-filters-btn {
+    background: #f0f0f0;
+    color: #222;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: auto;
+}
+
+.clear-filters-btn:hover {
+    background: #e0e0e0;
+}
+
+/* Контент */
+.favorites-content {
+    padding: 40px 0;
+    min-height: 60vh;
+}
+
+.favorites-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.favorites-header h2 {
+    font-size: 24px;
+    color: #222;
+}
+
+.view-options {
+    display: flex;
+    gap: 10px;
+}
+
+.view-btn {
+    background: white;
+    border: 2px solid #e0e0e0;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.view-btn.active {
+    background: #FF385C;
+    color: white;
+    border-color: #FF385C;
+}
+
+.view-btn:hover:not(.active) {
+    border-color: #FF385C;
+    color: #FF385C;
+}
+
+/* Сетка туров */
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.favorite-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.favorite-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.favorite-card-image {
+    position: relative;
+    height: 220px;
+}
+
+.favorite-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.favorite-card-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.favorite-card-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-card-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.favorite-card-btn.remove {
+    color: #dc3545;
+}
+
+.favorite-card-btn.remove:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.favorite-card-btn.compare {
+    color: #28a745;
+}
+
+.favorite-card-btn.compare:hover {
+    background: #28a745;
+    color: white;
+}
+
+.favorite-card-btn.compare.selected {
+    background: #28a745;
+    color: white;
+}
+
+.favorite-card-content {
+    padding: 25px;
+}
+
+.favorite-card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.favorite-card-location {
+    color: #717171;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.favorite-card-duration {
+    color: #717171;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.favorite-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.favorite-card-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FF385C;
+}
+
+.favorite-card-link {
+    background: #FF385C;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.favorite-card-link:hover {
+    background: #E31C5F;
+}
+
+/* Список туров */
+.favorites-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.favorite-list-item {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.favorite-list-item:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.favorite-list-image {
+    width: 200px;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.favorite-list-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.favorite-list-content {
+    flex: 1;
+}
+
+.favorite-list-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.favorite-list-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.favorite-list-info span {
+    color: #717171;
+    font-size: 14px;
+}
+
+.favorite-list-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.favorite-list-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FF385C;
+}
+
+.favorite-list-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Пустое состояние */
+.empty-favorites {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.empty-icon {
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+.empty-favorites h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.empty-favorites p {
+    color: #717171;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.browse-tours-btn {
+    display: inline-block;
+    background: #FF385C;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.browse-tours-btn:hover {
+    background: #E31C5F;
+    transform: translateY(-2px);
+}
+
+/* Сравнение */
+.compare-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.compare-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.compare-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#compareCount {
+    color: #717171;
+    font-size: 14px;
+}
+
+.compare-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.compare-btn:hover:not(:disabled) {
+    background: #218838;
+}
+
+.compare-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.clear-compare-btn {
+    background: #f0f0f0;
+    color: #222;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clear-compare-btn:hover {
+    background: #e0e0e0;
+}
+
+.compare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.compare-item {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+.compare-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.compare-item h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.compare-item p {
+    font-size: 14px;
+    color: #717171;
+    margin-bottom: 5px;
+}
+
+/* Модальное окно сравнения */
+.compare-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    max-width: 1200px;
+    margin: 50px auto;
+    border-radius: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 25px 0;
+}
+
+.modal-header h3 {
+    font-size: 24px;
+    color: #222;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #717171;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #222;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.compare-table {
+    overflow-x: auto;
+}
+
+.compare-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.compare-table th {
+    background: #f7f7f7;
+    font-weight: 600;
+    color: #222;
+}
+
+.compare-table td {
+    color: #717171;
+}
+
+.compare-table tr:hover {
+    background: #f9f9f9;
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 12px 16px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        font-size: 16px;
+    }
+
+    .nav-link:hover {
+        background: #f7f7f7;
+        transform: translateX(5px);
+    }
+
+    .nav-icon {
+        display: block;
+        font-size: 20px;
+        width: 24px;
+        text-align: center;
+    }
+
+    .nav-text {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .hero {
+        padding: 80px 15px 40px;
+        min-height: auto;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-container {
+        padding: 20px;
+    }
+    
+    .filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .filter-group {
+        justify-content: space-between;
+    }
+    
+    .clear-filters-btn {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .favorites-content {
+        padding: 30px 15px;
+    }
+    
+    .favorites-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .favorites-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .favorite-list-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .favorite-list-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .favorite-list-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .favorite-list-actions {
+        justify-content: stretch;
+    }
+    
+    .favorite-list-actions button {
+        flex: 1;
+    }
+    
+    .compare-bar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .compare-btn,
+    .clear-compare-btn {
+        width: 100%;
+    }
+    
+    .modal-content {
+        margin: 20px;
+        max-height: calc(100vh - 40px);
+    }
+    
+    .compare-table {
+        font-size: 14px;
+    }
+    
+    .compare-table th,
+    .compare-table td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .favorite-card-content {
+        padding: 20px;
+    }
+    
+    .favorite-card-title {
+        font-size: 16px;
+    }
+    
+    .favorite-card-price {
+        font-size: 18px;
+    }
+    
+    .favorite-list-title {
+        font-size: 18px;
+    }
+    
+    .favorite-list-price {
+        font-size: 20px;
+    }
+    
+    .empty-favorites {
+        padding: 60px 15px;
+    }
+    
+    .empty-icon {
+        font-size: 60px;
+    }
+    
+    .empty-favorites h3 {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - TravelHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>TravelHub</h2>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Главная</span>
+                </a>
+                <a href="search.html" class="nav-link">
+                    <span class="nav-icon">🔍</span>
+                    <span class="nav-text">Поиск</span>
+                </a>
+                <a href="favorites.html" class="nav-link">
+                    <span class="nav-icon">❤️</span>
+                    <span class="nav-text">Избранное</span>
+                </a>
+                <a href="profile.html" class="nav-link active">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Профиль</span>
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Профиль пользователя -->
+    <section class="profile-section">
+        <div class="container">
+            <!-- Заголовок профиля -->
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150" alt="Аватар">
+                    <button class="change-avatar-btn">📷</button>
+                </div>
+                <div class="profile-info">
+                    <h1>Александр Иванов</h1>
+                    <p class="profile-email">alexander.ivanov@email.com</p>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Путешествий</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Стран</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24</span>
+                            <span class="stat-label">Города</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="edit-profile-btn">Редактировать профиль</button>
+            </div>
+
+            <!-- Навигация по разделам -->
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="bookings">Мои бронирования</button>
+                <button class="tab-btn" data-tab="favorites">Избранные туры</button>
+                <button class="tab-btn" data-tab="settings">Настройки</button>
+                <button class="tab-btn" data-tab="documents">Документы</button>
+            </div>
+
+            <!-- Контент вкладок -->
+            <div class="profile-content">
+                <!-- Мои бронирования -->
+                <div class="tab-content active" id="bookings">
+                    <h2>Мои бронирования</h2>
+                    <div class="bookings-list">
+                        <div class="booking-card">
+                            <div class="booking-image">
+                                <img src="media/italia.jpg" alt="Италия">
+                            </div>
+                            <div class="booking-details">
+                                <h3>Романтическая Италия</h3>
+                                <p class="booking-location">📍 Рим, Флоренция, Венеция</p>
+                                <p class="booking-dates">📅 15-22 марта 2024</p>
+                                <p class="booking-guests">👥 2 гостя</p>
+                                <div class="booking-status confirmed">Подтверждено</div>
+                            </div>
+                            <div class="booking-actions">
+                                <button class="view-booking-btn">Подробнее</button>
+                                <button class="download-ticket-btn">Скачать билет</button>
+                            </div>
+                        </div>
+
+                        <div class="booking-card">
+                            <div class="booking-image">
+                                <img src="media/tailand.jpg" alt="Таиланд">
+                            </div>
+                            <div class="booking-details">
+                                <h3>Тропический Таиланд</h3>
+                                <p class="booking-location">📍 Бангкок, Пхукет</p>
+                                <p class="booking-dates">📅 10-20 апреля 2024</p>
+                                <p class="booking-guests">👥 2 гостя</p>
+                                <div class="booking-status pending">Ожидает оплаты</div>
+                            </div>
+                            <div class="booking-actions">
+                                <button class="pay-booking-btn">Оплатить</button>
+                                <button class="cancel-booking-btn">Отменить</button>
+                            </div>
+                        </div>
+
+                        <div class="booking-card past">
+                            <div class="booking-image">
+                                <img src="media/turcia.jpg" alt="Турция">
+                            </div>
+                            <div class="booking-details">
+                                <h3>Все включено в Турции</h3>
+                                <p class="booking-location">📍 Анталия</p>
+                                <p class="booking-dates">📅 1-8 января 2024</p>
+                                <p class="booking-guests">👥 4 гостя</p>
+                                <div class="booking-status completed">Завершено</div>
+                            </div>
+                            <div class="booking-actions">
+                                <button class="review-booking-btn">Оставить отзыв</button>
+                                <button class="book-again-btn">Забронировать снова</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Избранные туры -->
+                <div class="tab-content" id="favorites">
+                    <h2>Избранные туры</h2>
+                    <div class="favorites-list" id="favoritesList">
+                        <!-- Содержимое будет загружено из localStorage -->
+                    </div>
+                    <div class="empty-favorites" id="emptyFavorites" style="display: none;">
+                        <div class="empty-icon">💔</div>
+                        <h3>У вас пока нет избранных туров</h3>
+                        <p>Добавляйте понравившиеся туры в избранное, чтобы не потерять их</p>
+                        <a href="index.html#tours" class="browse-tours-btn">Смотреть туры</a>
+                    </div>
+                </div>
+
+                <!-- Настройки -->
+                <div class="tab-content" id="settings">
+                    <h2>Настройки профиля</h2>
+                    <div class="settings-section">
+                        <h3>Личная информация</h3>
+                        <form class="settings-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Имя</label>
+                                    <input type="text" value="Александр">
+                                </div>
+                                <div class="form-group">
+                                    <label>Фамилия</label>
+                                    <input type="text" value="Иванов">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" value="alexander.ivanov@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Телефон</label>
+                                <input type="tel" value="+7 (900) 123-45-67">
+                            </div>
+                            <div class="form-group">
+                                <label>Дата рождения</label>
+                                <input type="date" value="1990-05-15">
+                            </div>
+                            <button type="submit" class="save-settings-btn">Сохранить изменения</button>
+                        </form>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Уведомления</h3>
+                        <div class="notification-settings">
+                            <div class="notification-item">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="notification-info">
+                                    <h4>Email уведомления</h4>
+                                    <p>Получать информацию о акциях и специальных предложениях</p>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="notification-info">
+                                    <h4>SMS уведомления</h4>
+                                    <p>Важные сообщения о статусе бронирования</p>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="notification-info">
+                                    <h4>Push уведомления</h4>
+                                    <p>Мгновенные уведомления в браузере</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Безопасность</h3>
+                        <div class="security-settings">
+                            <button class="security-btn">Изменить пароль</button>
+                            <button class="security-btn">Двухфакторная аутентификация</button>
+                            <button class="security-btn danger">Удалить аккаунт</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Документы -->
+                <div class="tab-content" id="documents">
+                    <h2>Мои документы</h2>
+                    <div class="documents-section">
+                        <h3>Паспортные данные</h3>
+                        <div class="document-card">
+                            <div class="document-info">
+                                <h4>Паспорт РФ</h4>
+                                <p>Серия: 1234 №567890</p>
+                                <p>Выдан: 15.05.2020</p>
+                                <p>Действителен до: 15.05.2030</p>
+                            </div>
+                            <div class="document-actions">
+                                <button class="edit-document-btn">Редактировать</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="documents-section">
+                        <h3>Загруженные документы</h3>
+                        <div class="upload-area">
+                            <div class="upload-icon">📄</div>
+                            <h4>Загрузить новый документ</h4>
+                            <p>Поддерживаемые форматы: PDF, JPG, PNG (макс. 5MB)</p>
+                            <input type="file" id="documentUpload" accept=".pdf,.jpg,.jpeg,.png" multiple>
+                            <label for="documentUpload" class="upload-btn">Выбрать файлы</label>
+                        </div>
+                        
+                        <div class="documents-list">
+                            <div class="document-item">
+                                <div class="document-file">
+                                    <span class="file-icon">📄</span>
+                                    <div class="file-info">
+                                        <h5>visa_italy.pdf</h5>
+                                        <p>2.3 MB • Загружен 10.03.2024</p>
+                                    </div>
+                                </div>
+                                <div class="document-actions">
+                                    <button class="download-btn">Скачать</button>
+                                    <button class="delete-btn">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

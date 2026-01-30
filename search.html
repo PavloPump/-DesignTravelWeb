@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск туров - TravelHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="search.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>TravelHub</h2>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Главная</span>
+                </a>
+                <a href="search.html" class="nav-link active">
+                    <span class="nav-icon">🔍</span>
+                    <span class="nav-text">Поиск</span>
+                </a>
+                <a href="favorites.html" class="nav-link">
+                    <span class="nav-icon">❤️</span>
+                    <span class="nav-text">Избранное</span>
+                </a>
+                <a href="profile.html" class="nav-link">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Профиль</span>
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero секция как на главной странице -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Найдите идеальное путешествие</h1>
+            <p>Более 500 туров по всему миру</p>
+            
+            <!-- Форма поиска -->
+            <div class="search-container">
+                <form class="search-form">
+                    <div class="search-group">
+                        <label for="destination">Куда</label>
+                        <input type="text" id="destination" placeholder="Город, страна или регион">
+                    </div>
+                    <div class="search-group">
+                        <label for="checkin">Заезд</label>
+                        <input type="date" id="checkin">
+                    </div>
+                    <div class="search-group">
+                        <label for="checkout">Выезд</label>
+                        <input type="date" id="checkout">
+                    </div>
+                    <div class="search-group">
+                        <label for="guests">Гости</label>
+                        <select id="guests">
+                            <option value="1">1 гость</option>
+                            <option value="2">2 гостя</option>
+                            <option value="3">3 гостя</option>
+                            <option value="4">4 гостя</option>
+                            <option value="5+">5+ гостей</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="search-btn">Найти туры</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Расширенные фильтры -->
+    <section class="advanced-filters">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>Бюджет</label>
+                        <div class="price-range">
+                            <input type="number" id="minPrice" placeholder="От" min="0">
+                            <span>-</span>
+                            <input type="number" id="maxPrice" placeholder="До" min="0">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Длительность</label>
+                        <select id="duration">
+                            <option value="">Любая</option>
+                            <option value="1-3">1-3 дня</option>
+                            <option value="4-7">4-7 дней</option>
+                            <option value="8-14">8-14 дней</option>
+                            <option value="15+">15+ дней</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Тип тура</label>
+                        <select id="tourType">
+                            <option value="">Любой</option>
+                            <option value="beach">Пляжный отдых</option>
+                            <option value="excursion">Экскурсионный</option>
+                            <option value="adventure">Приключения</option>
+                            <option value="romantic">Романтический</option>
+                            <option value="family">Семейный</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="button" class="toggle-filters-btn" id="toggleFilters">
+                    <span>▼</span> Больше фильтров
+                </button>
+                
+                <div class="additional-filters" id="additionalFilters" style="display: none;">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label>Рейтинг отеля</label>
+                            <div class="rating-options">
+                                <label><input type="checkbox" value="3"> 3★</label>
+                                <label><input type="checkbox" value="4"> 4★</label>
+                                <label><input type="checkbox" value="5"> 5★</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label>Питание</label>
+                            <div class="meal-options">
+                                <label><input type="checkbox" value="ro"> Без питания</label>
+                                <label><input type="checkbox" value="bb"> Завтраки</label>
+                                <label><input type="checkbox" value="hb"> Завтрак+ужин</label>
+                                <label><input type="checkbox" value="fb"> Всё включено</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label>Удобства</label>
+                            <div class="amenity-options">
+                                <label><input type="checkbox" value="wifi"> Wi-Fi</label>
+                                <label><input type="checkbox" value="pool"> Бассейн</label>
+                                <label><input type="checkbox" value="spa"> SPA</label>
+                                <label><input type="checkbox" value="gym"> Фитнес</label>
+                                <label><input type="checkbox" value="beach"> Пляж</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-actions">
+                    <button type="button" class="apply-filters-btn">Применить фильтры</button>
+                    <button type="button" class="reset-filters-btn">Сбросить</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Результаты поиска -->
+    <section class="search-results">
+        <div class="container">
+            <div class="results-header">
+                <div class="results-info">
+                    <h2>Найдено туров: <span id="resultsCount">6</span></h2>
+                    <p id="searchQuery">Показаны все доступные туры</p>
+                </div>
+                <div class="results-controls">
+                    <div class="sort-options">
+                        <label>Сортировка:</label>
+                        <select id="sortResults">
+                            <option value="relevance">По релевантности</option>
+                            <option value="price-asc">Цена: по возрастанию</option>
+                            <option value="price-desc">Цена: по убыванию</option>
+                            <option value="rating">По рейтингу</option>
+                            <option value="duration">По длительности</option>
+                        </select>
+                    </div>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid">⊞</button>
+                        <button class="view-btn" data-view="list">☰</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Фильтры сбоку (десктоп) -->
+            <div class="results-layout">
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3>Направления</h3>
+                        <div class="filter-list">
+                            <label><input type="checkbox" value="europe"> Европа</label>
+                            <label><input type="checkbox" value="asia"> Азия</label>
+                            <label><input type="checkbox" value="america"> Америка</label>
+                            <label><input type="checkbox" value="africa"> Африка</label>
+                            <label><input type="checkbox" value="oceania"> Океания</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Сезонность</h3>
+                        <div class="filter-list">
+                            <label><input type="checkbox" value="summer"> Лето</label>
+                            <label><input type="checkbox" value="winter"> Зима</label>
+                            <label><input type="checkbox" value="spring"> Весна</label>
+                            <label><input type="checkbox" value="autumn"> Осень</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Активности</h3>
+                        <div class="filter-list">
+                            <label><input type="checkbox" value="diving"> Дайвинг</label>
+                            <label><input type="checkbox" value="skiing"> Горные лыжи</label>
+                            <label><input type="checkbox" value="surfing"> Серфинг</label>
+                            <label><input type="checkbox" value="hiking"> Пешие походы</label>
+                            <label><input type="checkbox" value="shopping"> Шоппинг</label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Результаты -->
+                <main class="results-main">
+                    <div class="results-grid" id="resultsGrid">
+                        <!-- Тур 1: Италия -->
+                        <div class="result-card">
+                            <div class="result-card-image">
+                                <img src="media/italia.jpg" alt="Тур в Италию">
+                                <div class="result-card-badge">Популярное</div>
+                                <button class="result-card-favorite">
+                                    <span>♡</span>
+                                </button>
+                            </div>
+                            <div class="result-card-content">
+                                <h3 class="result-card-title">Романтическая Италия</h3>
+                                <p class="result-card-location">📍 Рим, Флоренция, Венеция</p>
+                                <p class="result-card-duration">7 дней / 6 ночей</p>
+                                <div class="result-card-rating">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span>4.8 (124 отзыва)</span>
+                                </div>
+                                <div class="result-card-footer">
+                                    <span class="result-card-price">от 89 900 ₽</span>
+                                    <a href="tour-detail.html" class="result-card-link">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Тур 2: Таиланд -->
+                        <div class="result-card">
+                            <div class="result-card-image">
+                                <img src="media/tailand.jpg" alt="Тур в Таиланд">
+                                <div class="result-card-badge">Хит продаж</div>
+                                <button class="result-card-favorite">
+                                    <span>♡</span>
+                                </button>
+                            </div>
+                            <div class="result-card-content">
+                                <h3 class="result-card-title">Тропический Таиланд</h3>
+                                <p class="result-card-location">📍 Бангкок, Пхукет, Паттайя</p>
+                                <p class="result-card-duration">10 дней / 9 ночей</p>
+                                <div class="result-card-rating">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span>4.9 (89 отзывов)</span>
+                                </div>
+                                <div class="result-card-footer">
+                                    <span class="result-card-price">от 65 000 ₽</span>
+                                    <a href="tour-detail.html" class="result-card-link">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Тур 3: Турция -->
+                        <div class="result-card">
+                            <div class="result-card-image">
+                                <img src="media/turcia.jpg" alt="Тур в Турцию">
+                                <div class="result-card-badge">Выгодно</div>
+                                <button class="result-card-favorite">
+                                    <span>♡</span>
+                                </button>
+                            </div>
+                            <div class="result-card-content">
+                                <h3 class="result-card-title">Все включено в Турции</h3>
+                                <p class="result-card-location">📍 Анталия, Белек, Кемер</p>
+                                <p class="result-card-duration">7 дней / 6 ночей</p>
+                                <div class="result-card-rating">
+                                    <span class="stars">⭐⭐⭐⭐</span>
+                                    <span>4.6 (156 отзывов)</span>
+                                </div>
+                                <div class="result-card-footer">
+                                    <span class="result-card-price">от 45 000 ₽</span>
+                                    <a href="tour-detail.html" class="result-card-link">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Тур 4: Франция -->
+                        <div class="result-card">
+                            <div class="result-card-image">
+                                <img src="media/paris.jpg" alt="Тур во Францию">
+                                <div class="result-card-badge">Романтика</div>
+                                <button class="result-card-favorite">
+                                    <span>♡</span>
+                                </button>
+                            </div>
+                            <div class="result-card-content">
+                                <h3 class="result-card-title">Париж и Лазурный берег</h3>
+                                <p class="result-card-location">📍 Париж, Ницца, Канны</p>
+                                <p class="result-card-duration">8 дней / 7 ночей</p>
+                                <div class="result-card-rating">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span>4.9 (203 отзыва)</span>
+                                </div>
+                                <div class="result-card-footer">
+                                    <span class="result-card-price">от 95 000 ₽</span>
+                                    <a href="tour-detail.html" class="result-card-link">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Тур 5: ОАЭ -->
+                        <div class="result-card">
+                            <div class="result-card-image">
+                                <img src="media/New-York.jpg" alt="Тур в ОАЭ">
+                                <div class="result-card-badge">Люкс</div>
+                                <button class="result-card-favorite">
+                                    <span>♡</span>
+                                </button>
+                            </div>
+                            <div class="result-card-content">
+                                <h3 class="result-card-title">Эмираты роскоши</h3>
+                                <p class="result-card-location">📍 Дубай, Абу-Даби, Шарджа</p>
+                                <p class="result-card-duration">6 дней / 5 ночей</p>
+                                <div class="result-card-rating">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span>4.7 (167 отзывов)</span>
+                                </div>
+                                <div class="result-card-footer">
+                                    <span class="result-card-price">от 120 000 ₽</span>
+                                    <a href="tour-detail.html" class="result-card-link">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Тур 6: Бали -->
+                        <div class="result-card">
+                            <div class="result-card-image">
+                                <img src="media/bali.jpg" alt="Тур на Бали">
+                                <div class="result-card-badge">Экзотика</div>
+                                <button class="result-card-favorite">
+                                    <span>♡</span>
+                                </button>
+                            </div>
+                            <div class="result-card-content">
+                                <h3 class="result-card-title">Магический Бали</h3>
+                                <p class="result-card-location">📍 Денпасар, Убуд, Семиньяк</p>
+                                <p class="result-card-duration">9 дней / 8 ночей</p>
+                                <div class="result-card-rating">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span>4.8 (142 отзыва)</span>
+                                </div>
+                                <div class="result-card-footer">
+                                    <span class="result-card-price">от 78 000 ₽</span>
+                                    <a href="tour-detail.html" class="result-card-link">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="results-list" id="resultsList" style="display: none;">
+                        <!-- Результаты будут загружены здесь -->
+                    </div>
+                    
+                    <!-- Пагинация -->
+                    <div class="pagination" id="pagination">
+                        <button disabled>←</button>
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>→</button>
+                    </div>
+                    
+                    <!-- Нет результатов -->
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <div class="no-results-icon">🔍</div>
+                        <h3>Туры не найдены</h3>
+                        <p>Попробуйте изменить параметры поиска или фильтры</p>
+                        <button class="broaden-search-btn">Расширить поиск</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные направления -->
+    <section class="popular-searches">
+        <div class="container">
+            <h2>Популярные направления</h2>
+            <div class="popular-tags">
+                <button class="tag-btn" data-destination="Турция">Турция</button>
+                <button class="tag-btn" data-destination="Египет">Египет</button>
+                <button class="tag-btn" data-destination="Италия">Италия</button>
+                <button class="tag-btn" data-destination="Испания">Испания</button>
+                <button class="tag-btn" data-destination="Греция">Греция</button>
+                <button class="tag-btn" data-destination="Таиланд">Таиланд</button>
+                <button class="tag-btn" data-destination="Мальдивы">Мальдивы</button>
+                <button class="tag-btn" data-destination="ОАЭ">ОАЭ</button>
+                <button class="tag-btn" data-destination="Кипр">Кипр</button>
+                <button class="tag-btn" data-destination="Вьетнам">Вьетнам</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelHub</h3>
+                    <p>Ваш надежный партнер в мире путешествий</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#">Горящие туры</a></li>
+                        <li><a href="#">Индивидуальные туры</a></li>
+                        <li><a href="#">Групповые туры</a></li>
+                        <li><a href="#">Визы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Подписка</h4>
+                    <p>Подпишитесь на наши акции и спецпредложения</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Ваш email">
+                        <button type="submit">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelHub. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

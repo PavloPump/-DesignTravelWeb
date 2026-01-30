@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelHub - Туристическое агентство</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>TravelHub</h2>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Главная</span>
+                </a>
+                <a href="search.html" class="nav-link">
+                    <span class="nav-icon">🔍</span>
+                    <span class="nav-text">Поиск</span>
+                </a>
+                <a href="favorites.html" class="nav-link">
+                    <span class="nav-icon">❤️</span>
+                    <span class="nav-text">Избранное</span>
+                </a>
+                <a href="profile.html" class="nav-link">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Профиль</span>
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Откройте мир с TravelHub</h1>
+            <p>Уникальные путешествия по всему миру</p>
+            
+            <!-- Форма поиска -->
+            <div class="search-container">
+                <form class="search-form">
+                    <div class="search-group">
+                        <label for="destination">Куда</label>
+                        <input type="text" id="destination" placeholder="Город, страна или регион">
+                    </div>
+                    <div class="search-group">
+                        <label for="checkin">Заезд</label>
+                        <input type="date" id="checkin">
+                    </div>
+                    <div class="search-group">
+                        <label for="checkout">Выезд</label>
+                        <input type="date" id="checkout">
+                    </div>
+                    <div class="search-group">
+                        <label for="guests">Гости</label>
+                        <select id="guests">
+                            <option value="1">1 гость</option>
+                            <option value="2">2 гостя</option>
+                            <option value="3">3 гостя</option>
+                            <option value="4">4 гостя</option>
+                            <option value="5+">5+ гостей</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="search-btn">Найти туры</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные направления -->
+    <section class="popular-destinations">
+        <div class="container">
+            <h2>Популярные направления</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="media/paris.jpg" alt="Париж">
+                    <div class="destination-info">
+                        <h3>Париж</h3>
+                        <p>Город любви и романтики</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="media/tokio.jpg" alt="Токио">
+                    <div class="destination-info">
+                        <h3>Токио</h3>
+                        <p>Современные технологии и традиции</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="media/bali.jpg" alt="Бали">
+                    <div class="destination-info">
+                        <h3>Бали</h3>
+                        <p>Тропический рай</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="media/New-York.jpg" alt="Нью-Йорк">
+                    <div class="destination-info">
+                        <h3>Нью-Йорк</h3>
+                        <p>Город, который никогда не спит</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Туры -->
+    <section id="tours" class="tours">
+        <div class="container">
+            <h2>Наши лучшие туры</h2>
+            <div class="tours-grid">
+                <div class="tour-card">
+                    <div class="tour-image">
+                        <img src="media/italia.jpg" alt="Тур в Италию">
+                        <div class="tour-badge">Популярное</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Романтическая Италия</h3>
+                        <p class="tour-location">📍 Рим, Флоренция, Венеция</p>
+                        <p class="tour-description">7 дней / 6 ночей. Посещение Колизея, Ватикана, каналов Венеции.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">от 89 900 ₽</span>
+                            <a href="tour-detail.html" class="tour-btn">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tour-card">
+                    <div class="tour-image">
+                        <img src="media/tailand.jpg" alt="Тур в Таиланд">
+                        <div class="tour-badge">Хит продаж</div>
+                    </div>
+                    <div class="tour-content">
+                    <h3>Тропический Таиланд</h3>
+                    <p class="tour-location">📍 Бангкок, Пхукет, Паттайя</p>
+                    <p class="tour-description">10 дней / 9 ночей. Пляжный отдых, экскурсии, тайская кухня.</p>
+                    <div class="tour-footer">
+                        <span class="tour-price">от 65 000 ₽</span>
+                        <a href="tour-detail.html" class="tour-btn">Подробнее</a>
+                    </div>
+                </div>
+                </div>
+
+                <div class="tour-card">
+                    <div class="tour-image">
+                        <img src="media/turcia.jpg" alt="Тур в Турцию">
+                        <div class="tour-badge">Выгодно</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Все включено в Турции</h3>
+                        <p class="tour-location">📍 Анталия, Белек, Кемер</p>
+                        <p class="tour-description">7 дней / 6 ночей. Отель 5*, всё включено, анимация.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">от 45 000 ₽</span>
+                            <a href="tour-detail.html" class="tour-btn">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Почему выбирают TravelHub?</h2>
+                    <p>Мы - команда профессионалов, которые любят путешествовать и помогают другим открывать мир.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">✈️</div>
+                            <h3>Более 500 туров</h3>
+                            <p>Широкий выбор направлений по всему миру</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🏆</div>
+                            <h3>Гарантия качества</h3>
+                            <p>Все отели и услуги проверены нашими экспертами</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">💬</div>
+                            <h3>Поддержка 24/7</h3>
+                            <p>Помощь в любое время суток на протяжении всего путешествия</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Свяжитесь с нами</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📞 Телефон</h3>
+                        <p>+7 (495) 123-45-67</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📧 Email</h3>
+                        <p>info@travelhub.ru</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📍 Адрес</h3>
+                        <p>Москва, ул. Тверская, 1</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🕐 Время работы</h3>
+                        <p>Пн-Пт: 9:00 - 21:00</p>
+                        <p>Сб-Вс: 10:00 - 18:00</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="tel" placeholder="Телефон" required>
+                    <textarea placeholder="Сообщение" rows="4" required></textarea>
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelHub</h3>
+                    <p>Ваш надежный партнер в мире путешествий</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#">Горящие туры</a></li>
+                        <li><a href="#">Индивидуальные туры</a></li>
+                        <li><a href="#">Групповые туры</a></li>
+                        <li><a href="#">Визы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Подписка</h4>
+                    <p>Подпишитесь на наши акции и спецпредложения</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Ваш email">
+                        <button type="submit">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelHub. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
